@@ -26,7 +26,7 @@ namespace DegreeCalculator
             // validate the input
             if (h < 0 || m < 0 ||
                 h > 12 || m > 60)
-                Console.Write("Wrong input");
+                Console.Write("This is a wrong input.");
 
             if (h == 12)
                 h = 0;
