@@ -21,30 +21,29 @@ namespace DegreeCalculator
             Console.ReadLine();
 
         }
-        static int calculateAngle(int h,int m)
+        static int calculateAngle(int hour,int minutes)
         {
-            // validate the input
-            if (h < 0 || m < 0 ||
-                h > 12 || m > 60)
+            // validating user input
+            if (hour < 0 || minutes < 0 ||
+                hour > 12 || minutes > 60)
                 Console.Write("This is a wrong input.");
 
-            if (h == 12)
-                h = 0;
+            if (hour == 12)
+                hour = 0;
 
-            if (m == 60)
+            if (minutes == 60)
             {
-                m = 0;
-                h += 1;
-                if (h > 12)
-                    h = h - 12;
+                minutes = 0;
+                hour += 1;
+                if (hour > 12)
+                    hour = hour - 12;
             }
 
-            // Calculate the angles moved by hour and
-            // minute hands with reference to 12:00
-            int hour_angle = (int)(0.5 * (h * 60 + m));
-            int minute_angle = (int)(6 * m);
+            // Calculate the angles with reference to 12
+            int hour_angle = (int)(0.5 * (hour * 60 + minutes));
+            int minute_angle = (int)(6 * minutes);
 
-            // Find the difference between two angles
+            // Find the difference
             int angle = Math.Abs(hour_angle - minute_angle);
 
             // smaller angle of two possible angles
